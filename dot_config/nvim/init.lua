@@ -14,8 +14,3 @@ vim.opt.rtp:prepend(lazypath)
 
 require("vim-options")
 require("lazy").setup("plugins")
-
--- Colorscheme
-vim.cmd([[colorscheme gruvbox]])
-
-
