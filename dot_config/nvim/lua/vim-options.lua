@@ -5,16 +5,16 @@ vim.cmd("set shiftwidth=2")
 vim.g.mapleader = " "
 
 -- Creating panes
-vim.keymap.set('n', '<leader>|', "<C-w>v", {})
-vim.keymap.set('n', '<leader>-', "<C-w>s", {})
+vim.keymap.set("n", "<leader>|", "<C-w>v", {})
+vim.keymap.set("n", "<leader>-", "<C-w>s", {})
 
 -- Navigating panes
 for _, arrow_key in ipairs({ "j", "k", "l", "h" }) do
-  vim.keymap.set('n', string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
+	vim.keymap.set("n", string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
 end
 
 -- Open terminal in pane below
-vim.keymap.set('n', '<leader>ft', ":split | wincmd j | term<CR>i", {})
+vim.keymap.set("n", "<leader>ft", ":split | wincmd j | term<CR>i", {})
 vim.cmd("autocmd TermClose * exe 'bdelete! '..expand('<abuf>')")
 
 -- Copy/Cut/Paste Clipboard
