@@ -11,11 +11,9 @@ vim.keymap.set('n', '<leader>ft', ":term<CR>i", {})
 vim.keymap.set('n', '<leader>|', "<C-w>v", {})
 vim.keymap.set('n', '<leader>-', "<C-w>s", {})
 -- - Navigation
-for _, arrow_key in ipairs({"j", "k", "l", "h"}) do
+for _, arrow_key in ipairs({ "j", "k", "l", "h" }) do
   vim.keymap.set('n', string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
 end
 
-
-
-
-
+-- Auto format
+vim.cmd("autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })")
