@@ -1,7 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   name = "lualine",
-  config = function() 
+  config = function()
     require("lualine").setup({
       options = {
         theme = "gruvbox"
@@ -9,4 +9,3 @@ return {
     })
   end
 }
-  
