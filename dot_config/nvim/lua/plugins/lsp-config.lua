@@ -14,6 +14,8 @@ return {
         ensure_installed = {
           "lua_ls",
           "tsserver",
+          "fennel_language_server",
+          "clojure_lsp",
         },
       })
     end,
@@ -29,6 +31,12 @@ return {
         capabilities = capabilities,
       })
       config.tsserver.setup({
+        capabilities = capabilities,
+      })
+      config.fennel_language_server.setup({
+        capabilities = capabilities,
+      })
+      config.clojure_lsp.setup({
         capabilities = capabilities,
       })
       -- keymaps
