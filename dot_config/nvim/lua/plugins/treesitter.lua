@@ -1,5 +1,6 @@
 return {
-  'nvim-treesitter/nvim-treesitter', build = ':TSUpdate',
+  'nvim-treesitter/nvim-treesitter',
+  build = ':TSUpdate',
   config = function()
     local config = require('nvim-treesitter.configs')
     config.setup({
@@ -9,9 +10,15 @@ return {
         "elixir", "heex", "eex", "markdown",
         "fennel", "clojure", "scheme", "racket",
       },
-      highlight = { enable = true },
+      ignore_install = {
+        "dart",
+        "swift",
+      },
+      highlight = {
+        enable = true,
+        additional_vim_regex_highlighting = false,
+      },
       indent = { enable = true },
     })
   end
 }
-
