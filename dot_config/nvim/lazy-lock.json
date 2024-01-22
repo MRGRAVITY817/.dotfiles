@@ -1,6 +1,10 @@
 {
+  "LuaSnip": { "branch": "master", "commit": "2dbef19461198630b3d7c39f414d09fb07d1fdd2" },
   "alpha-nvim": { "branch": "main", "commit": "4b36c1ca9ea475bdc006896657cf1ccc486aeffa" },
+  "cmp-nvim-lsp": { "branch": "main", "commit": "5af77f54de1b16c34b23cba810150689a3a90312" },
+  "cmp_luasnip": { "branch": "master", "commit": "05a9ab28b53f71d1aece421ef32fee2cb857a843" },
   "elixir-tools.nvim": { "branch": "main", "commit": "163522196c962fa87cac0df2a0d1ad332e1e0755" },
+  "friendly-snippets": { "branch": "main", "commit": "69a2c1675b66e002799f5eef803b87a12f593049" },
   "gruvbox": { "branch": "main", "commit": "4176b0b720db0c90ab4030e5c1b4893faf41fd51" },
   "lazy.nvim": { "branch": "main", "commit": "28126922c9b54e35a192ac415788f202c3944c9f" },
   "lsconfig": { "branch": "master", "commit": "8917d2c830e04bf944a699b8c41f097621283828" },
@@ -11,6 +15,7 @@
   "none-ls.nvim": { "branch": "main", "commit": "0258d435e4e3354f81bd3d124676b9991c0012fd" },
   "nui.nvim": { "branch": "main", "commit": "35da9ca1de0fc4dda96c2e214d93d363c145f418" },
   "nvim-autopairs": { "branch": "master", "commit": "eac31b4797ce4fa9dd546f7b98ec32305527b19e" },
+  "nvim-cmp": { "branch": "main", "commit": "538e37ba87284942c1d76ed38dd497e54e65b891" },
   "nvim-surround": { "branch": "main", "commit": "703ec63aa798e5e07d309b35e42def34bebe0174" },
   "nvim-treesitter": { "branch": "master", "commit": "97997c928bb038457f49343ffa5304d931545584" },
   "nvim-web-devicons": { "branch": "master", "commit": "140edfcf25093e8b321d13e154cbce89ee868ca0" },
