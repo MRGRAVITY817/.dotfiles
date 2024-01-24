@@ -9,7 +9,7 @@ vim.cmd("set relativenumber")
 vim.g.mapleader = " "
 
 -- I want jk to be esc
-vim.keymap.set("i", "jk", "<esc>", {})
+vim.keymap.set({ "i", "v" }, "jk", "<esc>", { remap = true })
 
 -- Creating panes
 vim.keymap.set("n", "<leader>|", "<C-w>v", {})
@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>-", "<C-w>s", {})
 
 -- Navigating panes
 for _, arrow_key in ipairs({ "j", "k", "l", "h" }) do
-	vim.keymap.set("n", string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
+  vim.keymap.set("n", string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
 end
 
 -- Open terminal in pane below
