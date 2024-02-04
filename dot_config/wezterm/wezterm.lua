@@ -21,7 +21,7 @@ config.color_scheme = "Gruvbox dark, soft (base16)"
 config.enable_tab_bar = false
 
 -- Background blur
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.8
 config.macos_window_background_blur = 20
 
 config.keys = {

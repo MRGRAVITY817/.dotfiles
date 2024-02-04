@@ -8,6 +8,8 @@ vim.cmd("set number")
 vim.cmd("set relativenumber")
 vim.g.mapleader = " "
 
+-- Background
+
 -- I want jk to be esc
 vim.keymap.set("i", "jk", "<esc>", { remap = true })
 
