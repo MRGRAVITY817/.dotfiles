@@ -6,9 +6,22 @@ return {
 		name = "telescope",
 		config = function()
 			local builtin = require("telescope.builtin")
+
 			vim.keymap.set("n", "<leader><leader>", builtin.find_files, {})
 			vim.keymap.set("n", "<leader>/", builtin.live_grep, {})
 			vim.keymap.set("n", "<leader>fw", builtin.grep_string, {})
+
+			-- Override mappings
+			local actions = require("telescope.actions")
+			require("telescope").setup({
+				defaults = {
+					mappings = {
+						i = {
+							["jk"] = { "<esc>", type = "command" },
+						},
+					},
+				},
+			})
 		end,
 	},
 	{
