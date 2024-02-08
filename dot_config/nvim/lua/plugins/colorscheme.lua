@@ -8,9 +8,17 @@ return {
     config = function()
       require("gruvbox").setup({
         contrast = "soft",
-        transparent_mode = true,
       })
+      local function toggle_background()
+        if vim.o.background == "dark" then
+          vim.o.background = "light"
+        else
+          vim.o.background = "dark"
+        end
+      end
+
       vim.cmd("colorscheme gruvbox")
+      vim.keymap.set("n", "<leader>tb", toggle_background, {})
     end,
   },
 }
