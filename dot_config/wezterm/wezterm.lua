@@ -10,6 +10,8 @@ if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
 
+config.line_height = 1.1
+
 -- This is where you actually apply your config choices
 config.font_size = 18
 config.font = wezterm.font("JetBrains Mono", { weight = "Medium", italic = false })
