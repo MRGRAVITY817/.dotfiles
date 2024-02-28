@@ -9,16 +9,12 @@ return {
 		"nvim-treesitter/nvim-treesitter",
 	},
 	opts = {
-		-- workspaces = {
-		-- 	{
-		-- 		name = "personal",
-		-- 		path = "~/vaults/personal",
-		-- 	},
-		-- 	{
-		-- 		name = "work",
-		-- 		path = "~/vaults/work",
-		-- 	},
-		-- },
+		workspaces = {
+			{
+				name = "second brain",
+				path = "~/Notes",
+			},
+		},
 
 		-- see below for full list of options 👇
 		ui = {
