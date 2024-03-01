@@ -32,6 +32,9 @@ vim.cmd("set clipboard+=unnamedplus")
 -- Auto format
 vim.cmd("autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })")
 
+-- Remove highlights
+vim.keymap.set("n", "<esc><esc>", ":noh<CR>", {})
+
 -- Diagnostics
 vim.keymap.set("n", "<leader>sd", ":lua vim.diagnostic.open_float()<CR>", {})
 vim.keymap.set("n", "<leader>dd", ":Telescope diagnostics<CR>", {})
