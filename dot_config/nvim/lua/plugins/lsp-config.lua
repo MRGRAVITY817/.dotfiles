@@ -21,6 +21,7 @@ return {
           "htmx",
           "emmet_language_server",
           "tailwindcss",
+          "astro",
         },
       })
     end,
@@ -58,6 +59,9 @@ return {
         capabilities = capabilities,
       })
       config.tailwindcss.setup({
+        capabilities = capabilities,
+      })
+      config.astro.setup({
         capabilities = capabilities,
       })
 
