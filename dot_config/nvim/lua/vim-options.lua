@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>-", "<C-w>s", {})
 
 -- Navigating panes
 for _, arrow_key in ipairs({ "j", "k", "l", "h" }) do
-	vim.keymap.set("n", string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
+  vim.keymap.set("n", string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
 end
 
 -- Open terminal in pane below
@@ -29,11 +29,11 @@ vim.cmd("autocmd TermClose * exe 'bdelete! '..expand('<abuf>')")
 -- Copy/Cut/Paste Clipboard
 vim.cmd("set clipboard+=unnamedplus")
 
--- Auto format
-vim.cmd("autocmd BufWritePre * lua vim.lsp.buf.format({ async = false })")
+-- Autoformat on save if language server is available
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 -- Remove highlights
-vim.keymap.set("n", "<esc><esc>", ":noh<CR>", {})
+vim.keymap.set("n", "<leader>hq", ":noh<CR>", {})
 
 -- Diagnostics
 vim.keymap.set("n", "<leader>sd", ":lua vim.diagnostic.open_float()<CR>", {})
