@@ -12,7 +12,7 @@ return {
 			"rafamadriz/friendly-snippets",
 		},
 		config = function()
-			require("luasnip").filetype_extend("elixir", { "eelixr" })
+			require("luasnip").filetype_extend("elixir", { "eex", "heex" })
 		end,
 	},
 	{
