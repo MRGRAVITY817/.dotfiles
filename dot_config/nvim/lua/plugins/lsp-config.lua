@@ -23,6 +23,7 @@ return {
 					"tailwindcss",
 					"astro",
 					"elixirls",
+					"gleam",
 				},
 			})
 		end,
@@ -70,6 +71,9 @@ return {
 				-- By default, elixir-lis does not have a `cmd` set.
 				-- We have to explicitly set it here.
 				cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
+			})
+			config.gleam.setup({
+				capabilities = capabilities,
 			})
 
 			-- keymaps

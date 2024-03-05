@@ -29,6 +29,7 @@ return {
 					"clojure",
 					"scheme",
 					"racket",
+					"gleam",
 				},
 				ignore_install = {
 					"dart",
