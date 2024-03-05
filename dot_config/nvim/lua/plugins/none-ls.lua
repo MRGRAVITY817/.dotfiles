@@ -19,7 +19,8 @@ return {
 				null_ls.builtins.formatting.isort,
 				null_ls.builtins.formatting.black,
 				-- Elixir
-				null_ls.builtins.diagnostics.credo,
+				-- Turning this off for now, it's sometimes inaccurate
+				-- null_ls.builtins.diagnostics.credo,
 			},
 		})
 
