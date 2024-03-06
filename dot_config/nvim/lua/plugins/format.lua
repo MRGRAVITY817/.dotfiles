@@ -12,18 +12,32 @@ return {
 					clojure = { "cljstyle" },
 				},
 			})
+
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = "*",
+				callback = function(args)
+					require("conform").format({ bufnr = args.buf })
+				end,
+			})
 		end,
 	},
 	{
 		"mfussenegger/nvim-lint",
 		optional = true,
-		opts = function(_, opts)
-			if vim.fn.executable("credo") == 0 then
-				return
-			end
-			opts.linters_by_ft = {
+		config = function()
+			require("lint").linters_by_ft = {
+				python = { "flake8", "mypy" },
+				lua = { "luacheck" },
+				javascript = { "eslint" },
 				elixir = { "credo" },
+				clojure = { "clj-kondo" },
 			}
+
+			vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+				callback = function(args)
+					require("lint").try_lint()
+				end,
+			})
 		end,
 	},
 }

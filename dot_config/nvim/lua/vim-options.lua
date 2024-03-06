@@ -43,10 +43,3 @@ vim.keymap.set("n", "]w", ":lua vim.diagnostic.goto_next({ severity = vim.diagno
 vim.keymap.set("n", "[w", ":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })<CR>", {})
 vim.keymap.set("n", "]e", ":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>", {})
 vim.keymap.set("n", "[e", ":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>", {})
-
-vim.api.nvim_create_autocmd("BufWritePre", {
-	pattern = "*",
-	callback = function(args)
-		require("conform").format({ bufnr = args.buf })
-	end,
-})
