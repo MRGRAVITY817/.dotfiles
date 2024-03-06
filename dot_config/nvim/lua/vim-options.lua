@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>-", "<C-w>s", {})
 
 -- Navigating panes
 for _, arrow_key in ipairs({ "j", "k", "l", "h" }) do
-  vim.keymap.set("n", string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
+	vim.keymap.set("n", string.format("<C-%s>", arrow_key), string.format("<C-w>%s", arrow_key), {})
 end
 
 -- Open terminal in pane below
@@ -28,9 +28,6 @@ vim.cmd("autocmd TermClose * exe 'bdelete! '..expand('<abuf>')")
 
 -- Copy/Cut/Paste Clipboard
 vim.cmd("set clipboard+=unnamedplus")
-
--- Autoformat on save if language server is available
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 -- Remove highlights
 vim.keymap.set("n", "<leader>hq", ":noh<CR>", {})
@@ -46,3 +43,10 @@ vim.keymap.set("n", "]w", ":lua vim.diagnostic.goto_next({ severity = vim.diagno
 vim.keymap.set("n", "[w", ":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.WARN })<CR>", {})
 vim.keymap.set("n", "]e", ":lua vim.diagnostic.goto_next({ severity = vim.diagnostic.severity.ERROR })<CR>", {})
 vim.keymap.set("n", "[e", ":lua vim.diagnostic.goto_prev({ severity = vim.diagnostic.severity.ERROR })<CR>", {})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+	pattern = "*",
+	callback = function(args)
+		require("conform").format({ bufnr = args.buf })
+	end,
+})
