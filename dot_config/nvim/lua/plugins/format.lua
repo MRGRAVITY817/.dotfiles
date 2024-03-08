@@ -7,7 +7,10 @@ return {
 				formatters_by_ft = {
 					python = { "isort", "black" },
 					lua = { "stylua" },
-					javascript = { "prettier", "prettierd" },
+					javascript = { "biome" },
+					typescript = { "biome" },
+					typescript_react = { "biome" },
+					javascript_react = { "biome" },
 					elixir = { "mix" },
 					clojure = { "cljstyle" },
 				},

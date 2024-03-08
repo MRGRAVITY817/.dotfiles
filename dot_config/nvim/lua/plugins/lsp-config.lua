@@ -24,6 +24,7 @@ return {
 					"astro",
 					"elixirls",
 					"gleam",
+					"pyright",
 				},
 			})
 		end,
@@ -73,6 +74,9 @@ return {
 				cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
 			})
 			config.gleam.setup({
+				capabilities = capabilities,
+			})
+			config.pyright.setup({
 				capabilities = capabilities,
 			})
 
