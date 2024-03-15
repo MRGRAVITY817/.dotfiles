@@ -7,21 +7,23 @@ return {
 				formatters_by_ft = {
 					python = { "isort", "black" },
 					lua = { "stylua" },
-					javascript = { "biome" },
-					typescript = { "biome" },
-					typescript_react = { "biome" },
-					javascript_react = { "biome" },
+					javascript = { { "prettierd", "prettier" } },
 					elixir = { "mix" },
 					clojure = { "cljstyle" },
 				},
+				format_on_save = {
+					-- I recommend these options. See :help conform.format for details.
+					lsp_fallback = true,
+					timeout_ms = 500,
+				},
 			})
 
-			vim.api.nvim_create_autocmd("BufWritePre", {
-				pattern = "*",
-				callback = function(args)
-					require("conform").format({ bufnr = args.buf })
-				end,
-			})
+			-- vim.api.nvim_create_autocmd("BufWritePre", {
+			-- 	pattern = "*",
+			-- 	callback = function(args)
+			-- 		require("conform").format({ bufnr = args.buf })
+			-- 	end,
+			-- })
 		end,
 	},
 	{

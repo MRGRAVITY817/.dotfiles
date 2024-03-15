@@ -25,6 +25,7 @@ return {
 					"elixirls",
 					"gleam",
 					"pyright",
+					"svelte",
 				},
 			})
 		end,
@@ -77,6 +78,9 @@ return {
 				capabilities = capabilities,
 			})
 			config.pyright.setup({
+				capabilities = capabilities,
+			})
+			config.svelte.setup({
 				capabilities = capabilities,
 			})
 
