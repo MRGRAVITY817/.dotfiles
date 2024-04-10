@@ -42,7 +42,9 @@ return {
 	{
 		"julienvincent/nvim-paredit",
 		config = function()
-			require("nvim-paredit").setup()
+			require("nvim-paredit").setup({
+				filetypes = { "clojure", "cljd" },
+			})
 		end,
 	},
 }

@@ -3,8 +3,7 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 	},
 	{
-		"Exafunction/codeium.vim",
-		event = "BufEnter",
+		"github/copilot.vim",
 	},
 	{
 		"L3MON4D3/LuaSnip",

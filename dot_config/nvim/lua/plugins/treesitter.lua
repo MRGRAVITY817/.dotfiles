@@ -40,6 +40,17 @@ return {
 					additional_vim_regex_highlighting = false,
 				},
 				indent = { enable = true },
+				filetype_extensions = {
+					-- Use clojure parser for clojuredart
+					clojure = { "cljd" },
+				},
+			})
+
+			-- Manually set filetype for .cljd files
+			vim.filetype.add({
+				extension = {
+					cljd = "clojure",
+				},
 			})
 		end,
 	},
