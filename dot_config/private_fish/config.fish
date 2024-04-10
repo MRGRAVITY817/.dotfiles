@@ -10,11 +10,12 @@ fish_add_path $HOME/.pub-cache/bin
 fish_add_path /opt/homebrew/bin
 fish_add_path /Applications/WezTerm.app/Contents/MacOS
 fish_add_path $HOME/.emacs.d/bin
+fish_add_path $HOME/.config/emacs/bin
 fish_add_path $GOPATH/bin
 fish_add_path '/Applications/Racket v8.11.1/bin'
+fish_add_path $HOME/.local/share/containers/podman-desktop/extensions-storage/podman-desktop.compose/bin
 
 # General Aliases
-alias vim="nvim"
 alias ls="exa"
 alias fishfig="vim ~/.config/fish/config.fish"
 alias fishfig-commit="source ~/.config/fish/config.fish"
@@ -25,6 +26,11 @@ alias wezfig="vim ~/.config/wezterm/wezterm.lua"
 alias tmuxfig="vim ~/.tmux.conf"
 alias tmuxfig-commit="tmux source ~/.tmux.conf"
 alias cz="chezmoi"
+alias cdVimfig="cd ~/.config/nvim/"
+
+# Neovim Variants
+alias vim="nvim"
+alias lv="NVIM_APPNAME=lazyvim nvim"
 
 # Scala
 alias scli="scala-cli"
@@ -74,3 +80,8 @@ if status is-interactive
 end
 
 source /opt/homebrew/opt/asdf/libexec/asdf.fish
+
+# Wasmer
+export WASMER_DIR="/Users/tripboi/.wasmer"
+[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+~/.local/bin/mise activate fish | source
