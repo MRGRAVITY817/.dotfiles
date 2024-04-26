@@ -1,5 +1,4 @@
 return {
-	-- { "liquidz/vim-iced" },
 	{
 		"Olical/conjure",
 		ft = { "clojure", "fennel", "python", "scheme", "hy" }, -- etc

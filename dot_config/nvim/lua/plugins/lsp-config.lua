@@ -9,6 +9,9 @@ return {
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
+		dependencies = {
+			"pest-parser/pest.vim",
+		},
 		config = function()
 			require("mason-lspconfig").setup({
 				ensure_installed = {
@@ -26,7 +29,14 @@ return {
 					"gleam",
 					"pyright",
 					"svelte",
+					"pest_ls",
 				},
+			})
+
+			require("mason-lspconfig").setup_handlers({
+				["pest_ls"] = function()
+					require("pest-vim").setup({})
+				end,
 			})
 		end,
 	},
@@ -51,7 +61,7 @@ return {
 			})
 			config.html.setup({
 				capabilities = capabilities,
-				filetypes = { "html", "elixir", "eelixir", "heex" },
+				filetypes = { "html", "eelixir", "heex", "elixir" },
 			})
 			config.htmx.setup({
 				capabilities = capabilities,
@@ -81,6 +91,9 @@ return {
 				capabilities = capabilities,
 			})
 			config.svelte.setup({
+				capabilities = capabilities,
+			})
+			config.pest_ls.setup({
 				capabilities = capabilities,
 			})
 
