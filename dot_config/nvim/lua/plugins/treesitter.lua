@@ -40,6 +40,12 @@ return {
 					additional_vim_regex_highlighting = false,
 				},
 				indent = { enable = true },
+				autotag = {
+					enable = true,
+					enable_rename = true,
+					enable_close = true,
+					enable_close_on_slash = true,
+				},
 				filetype_extensions = {
 					-- Use clojure parser for clojuredart
 					clojure = { "cljd" },
@@ -56,6 +62,31 @@ return {
 	},
 	{
 		"windwp/nvim-ts-autotag",
-		opts = {},
+		config = function()
+			require("nvim-ts-autotag").setup({
+				filetypes = {
+					"html",
+					"javascript",
+					"typescript",
+					"javascriptreact",
+					"typescriptreact",
+					"svelte",
+					"vue",
+					"tsx",
+					"jsx",
+					"rescript",
+					"xml",
+					"php",
+					"markdown",
+					"astro",
+					"glimmer",
+					"handlebars",
+					"hbs",
+					"heex",
+					"eex",
+					"elixir",
+				},
+			})
+		end,
 	},
 }
