@@ -26,7 +26,7 @@ return {
 					"tailwindcss",
 					"astro",
 					"elixirls",
-					"gleam",
+					--"gleam",
 					"pyright",
 					"svelte",
 					"pest_ls",
@@ -84,9 +84,9 @@ return {
 				-- We have to explicitly set it here.
 				cmd = { vim.fn.stdpath("data") .. "/mason/bin/elixir-ls" },
 			})
-			config.gleam.setup({
-				capabilities = capabilities,
-			})
+			-- config.gleam.setup({
+			-- 	capabilities = capabilities,
+			-- })
 			config.pyright.setup({
 				capabilities = capabilities,
 			})
