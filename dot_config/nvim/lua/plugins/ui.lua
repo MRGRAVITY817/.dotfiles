@@ -35,7 +35,58 @@ return {
 		main = "ibl",
 		opts = {},
 		config = function()
-			require("ibl").setup()
+			require("ibl").setup({
+				indent = { char = "▏" },
+				scope = { enabled = false },
+			})
 		end,
 	},
+	{
+		"echasnovski/mini.indentscope",
+		version = "*",
+		config = function()
+			require("mini.indentscope").setup({
+				draw = { animation = require("mini.indentscope").gen_animation.none() },
+				-- Module mappings. Use `''` (empty string) to disable one.
+				mappings = {
+					-- Textobjects
+					object_scope = "ii",
+					object_scope_with_border = "ai",
+
+					-- Motions (jump to respective border line; if not present - body line)
+					goto_top = "[i",
+					goto_bottom = "]i",
+				},
+
+				-- Options which control scope computation
+				options = {
+					try_as_border = true,
+				},
+
+				-- Which character to use for drawing scope indicator
+				symbol = "▏",
+			})
+		end,
+		init = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = {
+					"help",
+					"alpha",
+					"dashboard",
+					"neo-tree",
+					"Trouble",
+					"trouble",
+					"lazy",
+					"mason",
+					"notify",
+					"toggleterm",
+					"lazyterm",
+				},
+				callback = function()
+					vim.b.miniindentscope_disable = true
+				end,
+			})
+		end,
+	},
+	{},
 }
