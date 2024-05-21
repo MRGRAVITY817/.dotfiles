@@ -9,8 +9,14 @@ return {
 		"ibhagwan/fzf-lua", -- optional
 	},
 	config = function()
-		require("neogit").setup({})
+		local neogit = require("neogit")
 
-		vim.keymap.set("n", "<leader>ng", ":Neogit<CR>", {})
+		-- setup
+		neogit.setup({})
+
+		-- keymaps
+		vim.keymap.set("n", "<leader>ng", function()
+			neogit.open({ kind = "vsplit" })
+		end, {})
 	end,
 }
