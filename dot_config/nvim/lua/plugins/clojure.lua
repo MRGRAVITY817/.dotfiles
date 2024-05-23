@@ -29,14 +29,22 @@ return {
 			})
 		end,
 		init = function()
-			-- Set configuration options here
-			vim.g["conjure#debug"] = true
+			-- Set the default height for horizontal splits
+			vim.o.winheight = 10
+			-- Set the default width for vertical splits
+			vim.o.winwidth = 40
+
+			-- Verbose output
+			-- vim.g["conjure#debug"] = true
+
 			-- Rebind it from K to <prefix>gk
 			vim.g["conjure#mapping#doc_word"] = "gk"
 			-- Local leader should be "Space"
 			vim.g.maplocalleader = " "
 		end,
 	},
+	{ "tpope/vim-dispatch" },
+	{ "clojure-vim/vim-jack-in" },
 	{ "tpope/vim-repeat" },
 	{
 		"julienvincent/nvim-paredit",

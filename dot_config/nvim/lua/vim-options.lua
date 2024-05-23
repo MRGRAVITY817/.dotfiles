@@ -14,6 +14,10 @@ vim.cmd("set relativenumber")
 -- I want jk to be esc
 vim.keymap.set("i", "jk", "<esc>", { remap = true })
 
+-- Pane splitting direction
+vim.o.splitright = true
+vim.o.splitbelow = true
+
 -- Creating panes
 vim.keymap.set("n", "<leader>|", "<C-w>v", {})
 vim.keymap.set("n", "<leader>-", "<C-w>s", {})
