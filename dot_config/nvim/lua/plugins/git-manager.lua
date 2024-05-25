@@ -12,11 +12,16 @@ return {
 		local neogit = require("neogit")
 
 		-- setup
-		neogit.setup({})
+		neogit.setup({
+			kind = "vsplit",
+			commit_editor = {
+				kind = "vsplit",
+			},
+		})
 
 		-- keymaps
 		vim.keymap.set("n", "<leader>ng", function()
-			neogit.open({ kind = "vsplit" })
+			neogit.open()
 		end, {})
 	end,
 }
