@@ -9,6 +9,7 @@ return {
 				ensure_installed = {
 					"astro",
 					"clojure",
+					"commonlisp",
 					"eex",
 					"elixir",
 					"fennel",
