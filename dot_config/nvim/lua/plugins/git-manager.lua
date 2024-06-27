@@ -2,22 +2,14 @@ return {
 	"NeogitOrg/neogit",
 	dependencies = {
 		"nvim-lua/plenary.nvim", -- required
-		"sindrets/diffview.nvim", -- optional - Diff integration
-
-		-- Only one of these is needed, not both.
+		"sindrets/diffview.nvim", -- optional
 		"nvim-telescope/telescope.nvim", -- optional
-		"ibhagwan/fzf-lua", -- optional
 	},
 	config = function()
 		local neogit = require("neogit")
 
 		-- setup
-		neogit.setup({
-			kind = "vsplit",
-			commit_editor = {
-				kind = "vsplit",
-			},
-		})
+		neogit.setup({})
 
 		-- keymaps
 		vim.keymap.set("n", "<leader>ng", function()
